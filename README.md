@@ -10,18 +10,25 @@ It uses HTML5 Canvas, Vanilla JavaScript, Node.js, and Socket.IO to provide fast
 
 collaborative-canvas/
 │
-├── client/        # Frontend (Canvas UI)
+├── client/                 # Frontend (Canvas UI)
 │   ├── index.html
 │   ├── style.css
 │   ├── canvas.js
 │   ├── websocket.js
 │   └── main.js
 │
-└── server/        # Backend (Socket.IO Server)
-    ├── server.js
-    ├── drawing-state.js
-    ├── rooms.js
-    └── package.json
+├── server/                 # Backend (Socket.IO Server)
+│   ├── server.js
+│   ├── drawing-state.js
+│   ├── rooms.js
+│   └── package.json
+│
+├── node_modules/
+├── .gitignore
+├── ARCHITECTURE.md
+├── package-lock.json
+└── README.md
+
 
 ---
 
