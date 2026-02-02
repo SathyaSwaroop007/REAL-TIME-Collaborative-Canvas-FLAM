@@ -1,0 +1,200 @@
+:root {
+    --bg: linear-gradient(135deg, #0d0d0d, #1a0d2c, #2e0d4d);
+    --panel: linear-gradient(180deg, #3d0d6f, #6a0dad);
+    --muted: #e0e0e0;
+    --accent: #c77dff;
+    --hover: rgba(255, 255, 255, 0.1);
+    --canvas-bg: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Inter, system-ui, Segoe UI, Arial;
+    background: var(--bg);
+    color: #fff;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: var(--panel);
+    border-bottom: 1px solid rgba(34, 100, 24, 0.808);
+}
+
+/* WORKSPACE: TOOLBAR + CANVAS SIDE BY SIDE */
+.workspace {
+    display: flex;
+    height: calc(100vh - 110px);
+}
+
+/* TOOLBAR (LEFT SIDE) */
+.toolbar {
+    width: 260px;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    background: var(--panel);
+    border-right: 1px solid rgba(91, 188, 88, 0.584);
+    border-radius: 12px 0 0 12px;
+}
+
+/* TOOL BUTTONS */
+.tool {
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: #111;
+    color: #ddd;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tool.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: #fff;
+}
+
+.tool:hover {
+    background: var(--hover);
+    border-color: #fff;
+}
+
+/* COLORS */
+.colors {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.colors button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #222;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.colors button:hover {
+    transform: scale(1.1);
+    border-color: #fff;
+}
+
+/* SIZE SLIDER */
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+}
+
+/* ACTION BUTTONS */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.actions button {
+    padding: 8px;
+    border-radius: 12px;
+    background: #111;
+    border: 2px solid transparent;
+    color: #ddd;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.actions button:hover {
+    background: var(--hover);
+    border-color: #fff;
+}
+
+/* CLIENT LIST */
+.clients {
+    margin-top: auto;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* CANVAS AREA (RIGHT SIDE) */
+.main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+/* CANVAS WRAPPER */
+.canvas-wrap {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+/* CANVAS */
+canvas {
+    display: block;
+    border-radius: 12px;
+    cursor: crosshair;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* REMOTE CURSORS */
+#cursors {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    pointer-events: none;
+}
+
+.cursor {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    transition: transform 0.1s linear;
+}
+
+/* CONNECTION STATUS */
+.status {
+    padding: 6px 8px;
+    border-radius: 6px;
+}
+
+.status.connected {
+    background: rgba(34, 197, 94, 0.12);
+    color: #22c55e;
+}
+
+.status.disconnected {
+    background: rgba(239, 68, 68, 0.08);
+    color: #ef4444;
+}
+
+/* FOOTER */
+footer.footer {
+    padding: 8px 20px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
